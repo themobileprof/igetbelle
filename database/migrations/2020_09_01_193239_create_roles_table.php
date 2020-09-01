@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -9,18 +10,23 @@ use Illuminate\Database\Migrations\Migration;
  * https://play.google.com/store/apps/details?id=adrian.adbm
  * 
  * Created: Sep 1, 2020
-*/
+ */
 
-class CreateRolesTable extends Migration {
+class CreateRolesTable extends Migration
+{
 
-    public function up() {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('role', 100)->nullable();
-        });
-    }
+	public function up()
+	{
+		Schema::create('roles', function (Blueprint $table) {
+			$table->increments('id');
+			$table->string('role', 100)->nullable();
+			$table->timestamps();
+			$table->softDeletes();
+		});
+	}
 
-    public function down() {
-        Schema::dropIfExists('roles');
-    }
+	public function down()
+	{
+		Schema::dropIfExists('roles');
+	}
 }
