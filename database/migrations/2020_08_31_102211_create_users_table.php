@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration {
     public function up() {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->integer('roleId')->nullable()->unsigned();
             $table->string('name', 100);
             $table->string('phone', 100)->nullable();
             $table->string('email')->unique();
@@ -27,10 +28,14 @@ class CreateUsersTable extends Migration {
 			$table->rememberToken();
 			$table->timestamps();
 			$table->softDeletes();
+            $table->foreign('roleId')->references('id')->on('roles');
         });
     }
 
     public function down() {
+        Schema::table('roles', function (Blueprint $table) {
+            $table->dropForeign(['roleId']);
+        });
         Schema::dropIfExists('users');
     }
 }
