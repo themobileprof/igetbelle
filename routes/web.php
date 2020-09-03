@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('index');
 });
 
 Auth::routes();
@@ -43,3 +43,4 @@ Route::resource('tags', 'TagController');
 Route::resource('workers', 'WorkerController');
 
 Route::resource('users', 'UserController');
+
