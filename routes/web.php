@@ -17,14 +17,31 @@ Route::get('/', function () {
 	return view('index');
 });
 
-Auth::routes();
+Route::get('/about', function () {
+	return view('about');
+})->name('about');
+
+Route::get('/services', function () {
+	return view('services');
+})->name('services');
+
+Route::get('/articles', function () {
+	return view('articles');
+})->name('articles');
+
+
+Route::get('/faq', function () {
+	return view('faq');
+})->name('faq');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->middleware('verified');
+//Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('categories', 'CategoryController');
 
