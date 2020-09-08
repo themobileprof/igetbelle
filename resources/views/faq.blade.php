@@ -50,10 +50,10 @@
 					<div class="buttons_content">
 						<form action="faqs.php" method="post">
 							<div class="elements_button">
-								<input id="q" type="text" name="q" class="form-control button_2">
+								<input id="q" type="text" name="q" class="form-control" placeholder="search ...">
 							</div>
 							<div class="elements_button">
-								<select id="category" name="category" class="form-control button button_2">
+								<select id="category" name="category" class="form-control">
 									<option value="">Choose Category</option>
 									<option value="food">Food</option>
 									<option value="fruits">Fruits</option>
