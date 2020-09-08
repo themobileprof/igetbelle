@@ -48,7 +48,7 @@
 				<!-- Buttons -->
 				<div class="buttons">
 					<div class="buttons_content">
-						<form action="faqs.php" method="post">
+						<form action="{{ url('/faqs') }}" method="get">
 							<div class="elements_button">
 								<input id="q" type="text" name="q" class="form-control" placeholder="search ...">
 							</div>
@@ -74,16 +74,18 @@
 				<div class="accordions">
 					<div class="accordions_container">
 
+                        @foreach ($faqs as $faq)
 						<div class="accordion_container">
 							<div class="accordion d-flex flex-row align-items-center active">
-								<div>Maecenas fermentum tortor id fringilla molestie.</div>
+								<div>{{ $faq->question }}</div>
 							</div>
 							<div class="accordion_panel">
 								<div>
-									<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
+                                    {{ $faq->answer }}
 								</div>
 							</div>
 						</div>
+                        @endforeach
 
 						<div class="accordion_container">
 							<div class="accordion d-flex flex-row align-items-center">

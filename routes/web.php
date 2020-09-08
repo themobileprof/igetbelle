@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Faq;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,11 @@ Route::get('/articles', function () {
 })->name('articles');
 
 
-Route::get('/faq', function () {
-	return view('faq');
+Route::get('/faq/{q?}/{category?}', function ($q = null, $category = null) {
+    $faqs = Faq::inRandomOrder()
+        ->limit(20)
+        ->get();
+    return view('faq', ['faqs' => $faqs]);
 })->name('faq');
 
 
