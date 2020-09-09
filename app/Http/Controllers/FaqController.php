@@ -7,145 +7,168 @@ use App\Http\Requests;
 use App\Http\Requests\CreateFaqRequest;
 use App\Http\Requests\UpdateFaqRequest;
 use App\Repositories\FaqRepository;
+use Illuminate\Support\Facades\DB;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Category;
 use Response;
 
 class FaqController extends AppBaseController
 {
-    /** @var  FaqRepository */
-    private $faqRepository;
+	/** @var  FaqRepository */
+	private $faqRepository;
 
-    public function __construct(FaqRepository $faqRepo)
-    {
-        $this->faqRepository = $faqRepo;
-    }
+	public function __construct(FaqRepository $faqRepo)
+	{
+		$this->faqRepository = $faqRepo;
+	}
 
-    /**
-     * Display a listing of the Faq.
-     *
-     * @param FaqDataTable $faqDataTable
-     * @return Response
-     */
-    public function index(FaqDataTable $faqDataTable)
-    {
-        return $faqDataTable->render('faqs.index');
-    }
+	/**
+	 * Display a listing of the Faq.
+	 *
+	 * @param FaqDataTable $faqDataTable
+	 * @return Response
+	 */
+	public function index(FaqDataTable $faqDataTable)
+	{
+		return $faqDataTable->render('faqs.index');
+	}
 
-    /**
-     * Show the form for creating a new Faq.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('faqs.create');
-    }
+	/**
+	 * Show the form for creating a new Faq.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		$categories = Category::pluck("category", "id");
+		return view('faqs.create', ['categoryItems' => $categories]);
+	}
 
-    /**
-     * Store a newly created Faq in storage.
-     *
-     * @param CreateFaqRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateFaqRequest $request)
-    {
-        $input = $request->all();
+	/**
+	 * Store a newly created Faq in storage.
+	 *
+	 * @param CreateFaqRequest $request
+	 *
+	 * @return Response
+	 */
+	public function store(CreateFaqRequest $request)
+	{
+		$input = $request->all();
 
-        $faq = $this->faqRepository->create($input);
+		$faq = $this->faqRepository->create($input);
 
-        Flash::success('Faq saved successfully.');
+		// Add Tags
+		$this->addTags($request['tags']);
 
-        return redirect(route('faqs.index'));
-    }
+		Flash::success('Faq saved successfully.');
 
-    /**
-     * Display the specified Faq.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $faq = $this->faqRepository->find($id);
+		return redirect(route('faqs.index'));
+	}
 
-        if (empty($faq)) {
-            Flash::error('Faq not found');
+	/**
+	 * Display the specified Faq.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$faq = $this->faqRepository->find($id);
 
-            return redirect(route('faqs.index'));
-        }
+		if (empty($faq)) {
+			Flash::error('Faq not found');
 
-        return view('faqs.show')->with('faq', $faq);
-    }
+			return redirect(route('faqs.index'));
+		}
 
-    /**
-     * Show the form for editing the specified Faq.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $faq = $this->faqRepository->find($id);
+		return view('faqs.show')->with('faq', $faq);
+	}
 
-        if (empty($faq)) {
-            Flash::error('Faq not found');
+	/**
+	 * Show the form for editing the specified Faq.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$faq = $this->faqRepository->find($id);
 
-            return redirect(route('faqs.index'));
-        }
+		if (empty($faq)) {
+			Flash::error('Faq not found');
 
-        return view('faqs.edit')->with('faq', $faq);
-    }
+			return redirect(route('faqs.index'));
+		}
 
-    /**
-     * Update the specified Faq in storage.
-     *
-     * @param  int              $id
-     * @param UpdateFaqRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateFaqRequest $request)
-    {
-        $faq = $this->faqRepository->find($id);
+		$categories = Category::pluck("category", "id");
+		return view('faqs.edit', ['faq' => $faq, 'categoryItems' => $categories]);
+	}
 
-        if (empty($faq)) {
-            Flash::error('Faq not found');
+	/**
+	 * Update the specified Faq in storage.
+	 *
+	 * @param  int              $id
+	 * @param UpdateFaqRequest $request
+	 *
+	 * @return Response
+	 */
+	public function update($id, UpdateFaqRequest $request)
+	{
+		$faq = $this->faqRepository->find($id);
 
-            return redirect(route('faqs.index'));
-        }
+		if (empty($faq)) {
+			Flash::error('Faq not found');
 
-        $faq = $this->faqRepository->update($request->all(), $id);
+			return redirect(route('faqs.index'));
+		}
 
-        Flash::success('Faq updated successfully.');
+		// Add Tags
+		$this->addTags($request['tags']);
 
-        return redirect(route('faqs.index'));
-    }
+		$faq = $this->faqRepository->update($request->all(), $id);
 
-    /**
-     * Remove the specified Faq from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $faq = $this->faqRepository->find($id);
+		Flash::success('Faq updated successfully.');
 
-        if (empty($faq)) {
-            Flash::error('Faq not found');
+		return redirect(route('faqs.index'));
+	}
 
-            return redirect(route('faqs.index'));
-        }
+	/**
+	 * Remove the specified Faq from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$faq = $this->faqRepository->find($id);
 
-        $this->faqRepository->delete($id);
+		if (empty($faq)) {
+			Flash::error('Faq not found');
 
-        Flash::success('Faq deleted successfully.');
+			return redirect(route('faqs.index'));
+		}
 
-        return redirect(route('faqs.index'));
-    }
+		$this->faqRepository->delete($id);
+
+		Flash::success('Faq deleted successfully.');
+
+		return redirect(route('faqs.index'));
+	}
+
+	public function addTags($t)
+	{
+
+		// Create tags
+		$tags = explode(',', $t);
+
+		foreach ($tags as $tag) {
+			DB::table('tags')->insertOrIgnore([
+				['tag' => $tag],
+			]);
+		}
+	}
 }

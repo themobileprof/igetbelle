@@ -10,7 +10,7 @@
 			</div>
 			<div class="pull-left info">
 				@if (Auth::guest())
-				<p>InfyOm</p>
+				<p>iGetBelle</p>
 				@else
 				<p>{{ Auth::user()->name}}</p>
 				@endif

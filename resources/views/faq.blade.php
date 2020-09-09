@@ -48,21 +48,29 @@
 				<!-- Buttons -->
 				<div class="buttons">
 					<div class="buttons_content">
-						<form action="{{ url('/faqs') }}" method="get">
+						<form action="{{ url('/faq') }}" method="get">
 							<div class="elements_button">
-								<input id="q" type="text" name="q" class="form-control" placeholder="search ...">
+								<select id="q" name="q" class="form-control">
+									<option value="">Any Topic</option>
+									@foreach ($tags as $tag)
+									@if($tag->tag == app('request')->input('q'))
+									<option value="{{ $tag->tag }}" selected>{{ $tag->tag }}</option>
+									@else
+									<option value="{{ $tag->tag }}">{{ $tag->tag }}</option>
+									@endif
+									@endforeach
+								</select>
 							</div>
 							<div class="elements_button">
 								<select id="category" name="category" class="form-control">
-									<option value="">Choose Category</option>
-									<option value="food">Food</option>
-									<option value="fruits">Fruits</option>
-									<option value="exercises">Exercises</option>
-									<option value="mental">Mental Health</option>
-									<option value="communication">Communication</option>
-									<option value="medications">Medications</option>
-									<option value="drinks">Drinks</option>
-									<option value="sex">Sex</option>
+									<option value="">Any Category</option>
+									@foreach ($categories as $category)
+									@if($category->id == app('request')->input('category'))
+									<option value="{{ $category->id }}" selected>{{ $category->category }}</option>
+									@else
+									<option value="{{ $category->id }}">{{ $category->category }}</option>
+									@endif
+									@endforeach
 								</select>
 							</div>
 							<div class="elements_button"><button type="submit" class="button button_3">Search</button></div>
@@ -74,40 +82,19 @@
 				<div class="accordions">
 					<div class="accordions_container">
 
-                        @foreach ($faqs as $faq)
+						@foreach ($faqs as $faq)
 						<div class="accordion_container">
-							<div class="accordion d-flex flex-row align-items-center active">
+							<div class="accordion d-flex flex-row align-items-center">
 								<div>{{ $faq->question }}</div>
 							</div>
 							<div class="accordion_panel">
 								<div>
-                                    {{ $faq->answer }}
+									{{ $faq->answer }}
 								</div>
 							</div>
 						</div>
-                        @endforeach
+						@endforeach
 
-						<div class="accordion_container">
-							<div class="accordion d-flex flex-row align-items-center">
-								<div>Duis quis lacinia elit. Etiam varius mi eget lacus ultricies elementum</div>
-							</div>
-							<div class="accordion_panel">
-								<div>
-									<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="accordion_container">
-							<div class="accordion d-flex flex-row align-items-center">
-								<div>Maecenas fermentum tortor id fringilla molestie.</div>
-							</div>
-							<div class="accordion_panel">
-								<div>
-									<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-								</div>
-							</div>
-						</div>
 
 					</div>
 				</div>

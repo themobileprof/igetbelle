@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Models\Faq;
+use App\Models\Category;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +34,24 @@ Route::get('/articles', function () {
 })->name('articles');
 
 
-Route::get('/faq/{q?}/{category?}', function ($q = null, $category = null) {
-    $faqs = Faq::inRandomOrder()
-        ->limit(20)
-        ->get();
-    return view('faq', ['faqs' => $faqs]);
+Route::get('/faq', function (Request $request) {
+	$cat = Category::all();
+	$tags = Tag::orderBy('tag', 'asc')->get();
+
+	$q = $request->q;
+	$category = $request->category;
+
+	//dd($request);
+	$faqs = Faq::inRandomOrder()
+		->when($q, function ($query, $q) {
+			return $query->where('tags', 'LIKE', '%' . $q . '%');
+		})
+		->when($category, function ($query, $category) {
+			return $query->where('categoryId', $category);
+		})
+		->limit(20)
+		->get();
+	return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $cat]);
 })->name('faq');
 
 
@@ -64,4 +80,3 @@ Route::resource('tags', 'TagController');
 Route::resource('workers', 'WorkerController');
 
 Route::resource('users', 'UserController');
-
