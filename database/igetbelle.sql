@@ -44,24 +44,6 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `tags`, `verifyScore`, `category
 (3, 'Should I exercise?', 'Staying active while you’re pregnant is great for both you and your baby. It can help with the tiredness and has a host of other benefits.  The amount of exercise you can do during pregnancy will depend on how active you were before you got pregnant.', 'exercise', NULL, 3, '2020-09-07 23:40:46', '2020-09-07 23:40:46', NULL);
 
 --
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2020_08_31_102207_create_categories_table', 1),
-(2, '2020_08_31_102208_create_merchants_table', 1),
-(3, '2020_08_31_102209_create_products_faq_table', 1),
-(4, '2020_08_31_102210_create_tags_table', 1),
-(5, '2020_08_31_102211_create_users_table', 1),
-(6, '2020_08_31_102212_create_workers_table', 1),
-(7, '2020_08_31_102213_create_faqs_table', 1),
-(8, '2020_08_31_102214_create_products_table', 1),
-(9, '2020_08_31_102215_create_changes_table', 1),
-(10, '2020_08_31_102216_create_questions_table', 1),
-(11, '2020_08_31_102217_create_verifications_table', 1),
-(12, '2020_09_01_193239_create_roles_table', 1);
-
---
 -- Dumping data for table `roles`
 --
 
