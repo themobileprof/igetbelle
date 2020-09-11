@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>iGetBelle Dashboard</title>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
 	<!-- Bootstrap 3.3.7 -->
