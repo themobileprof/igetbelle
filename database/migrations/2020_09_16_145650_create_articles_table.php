@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -9,24 +10,28 @@ use Illuminate\Database\Migrations\Migration;
  * https://play.google.com/store/apps/details?id=adrian.adbm
  * 
  * Created: Sep 16, 2020
-*/
+ */
 
-class CreateArticlesTable extends Migration {
+class CreateArticlesTable extends Migration
+{
 
-    public function up() {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title', 100)->nullable();
-            $table->string('body', 100)->nullable();
-            $table->date('articleDate')->nullable();
-            $table->string('tags', 100)->nullable();
-            $table->string('status', 100)->nullable();
+	public function up()
+	{
+		Schema::create('articles', function (Blueprint $table) {
+			$table->increments('id');
+			$table->string('title', 100)->nullable();
+			$table->string('body', 1000)->nullable();
+			$table->date('articleDate')->nullable();
+			$table->string('image', 100)->nullable();
+			$table->string('tags', 200)->nullable();
+			$table->string('status', 100)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-        });
-    }
+		});
+	}
 
-    public function down() {
-        Schema::dropIfExists('articles');
-    }
+	public function down()
+	{
+		Schema::dropIfExists('articles');
+	}
 }
