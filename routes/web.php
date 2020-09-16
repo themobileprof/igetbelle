@@ -80,3 +80,6 @@ Route::resource('tags', 'TagController');
 Route::resource('workers', 'WorkerController');
 
 Route::resource('users', 'UserController');
+
+
+Route::resource('articles', 'ArticleController');

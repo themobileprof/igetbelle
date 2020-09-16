@@ -30,3 +30,5 @@ Route::resource('products', 'ProductAPIController');
 Route::resource('tags', 'TagAPIController');
 
 Route::resource('workers', 'WorkerAPIController');
+
+Route::resource('articles', 'ArticleAPIController');
