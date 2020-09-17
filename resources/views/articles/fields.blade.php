@@ -4,12 +4,6 @@
 	{!! Form::text('title', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100,'maxlength' => 100]) !!}
 </div>
 
-<!-- Body Field -->
-<div class="form-group col-sm-6">
-	{!! Form::label('body', 'Body:') !!}
-	{!! Form::textarea('body', null, ['class' => 'form-control','maxlength' => 1000,'maxlength' => 1000,'maxlength' => 1000]) !!}
-</div>
-
 <!-- Articledate Field -->
 <div class="form-group col-sm-6">
 	{!! Form::label('articleDate', 'Articledate:') !!}
@@ -26,10 +20,17 @@
 </script>
 @endpush
 
+<!-- Body Field -->
+<div class="form-group col-sm-12">
+	{!! Form::label('body', 'Body:') !!}
+	{!! Form::textarea('body', null, ['class' => 'form-control','maxlength' => 1000,'maxlength' => 1000,'maxlength' => 1000]) !!}
+</div>
+
 <!-- Image Field -->
 <div class="form-group col-sm-6">
 	{!! Form::label('image', 'Image:') !!}
-	{!! Form::text('image', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100,'maxlength' => 100]) !!}
+	<!-- {!! Form::text('image', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100,'maxlength' => 100]) !!} -->
+	{!! Form::file('image') !!}
 </div>
 
 <!-- Tags Field -->

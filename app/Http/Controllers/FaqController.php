@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Http\Requests\CreateFaqRequest;
 use App\Http\Requests\UpdateFaqRequest;
 use App\Repositories\FaqRepository;
-use Illuminate\Support\Facades\DB;
+use App\Classes;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Category;
@@ -59,7 +59,7 @@ class FaqController extends AppBaseController
 		$faq = $this->faqRepository->create($input);
 
 		// Add Tags
-		$this->addTags($request['tags']);
+		new Classes\AddTags($request['tags']);
 
 		Flash::success('Faq saved successfully.');
 
@@ -126,7 +126,7 @@ class FaqController extends AppBaseController
 		}
 
 		// Add Tags
-		$this->addTags($request['tags']);
+		new Classes\AddTags($request['tags']);
 
 		$faq = $this->faqRepository->update($request->all(), $id);
 
@@ -157,18 +157,5 @@ class FaqController extends AppBaseController
 		Flash::success('Faq deleted successfully.');
 
 		return redirect(route('faqs.index'));
-	}
-
-	public function addTags($t)
-	{
-
-		// Create tags
-		$tags = explode(',', $t);
-
-		foreach ($tags as $tag) {
-			DB::table('tags')->insertOrIgnore([
-				['tag' => $tag],
-			]);
-		}
 	}
 }
