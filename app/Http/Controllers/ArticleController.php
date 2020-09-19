@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ArticleDataTable;
-use App\Http\Requests;
 use App\Http\Requests\CreateArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Repositories\ArticleRepository;
@@ -55,11 +54,8 @@ class ArticleController extends AppBaseController
 		$input = $request->all();
 
 		// Add image to Storage
-		if ($file = new Classes\AddImage('image')) {
-			$input['image'] = $file;
-		} else {
-			$input['image'] = null;
-		}
+		$file = new Classes\AddImage;
+		$input['image'] = $file->AddImage($request, 'image');
 
 
 		$article = $this->articleRepository->create($input);
@@ -131,7 +127,7 @@ class ArticleController extends AppBaseController
 		}
 
 		// Add image to Storage
-		if ($file = new Classes\AddImage('image')) {
+		if ($file = new Classes\AddImage($request, 'image')) {
 
 			// Delete existing image
 			if (!empty($article->image)) {

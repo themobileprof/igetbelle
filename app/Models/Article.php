@@ -68,54 +68,52 @@ use Eloquent as Model;
 class Article extends Model
 {
 
-    public $table = 'articles';
-    
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+	public $table = 'articles';
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 
 
 
-    public $fillable = [
-        'title',
-        'body',
-        'articleDate',
-        'image',
-        'tags',
-        'status'
-    ];
+	public $fillable = [
+		'title',
+		'body',
+		'articleDate',
+		'image',
+		'tags',
+		'status'
+	];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'body' => 'string',
-        'articleDate' => 'date',
-        'image' => 'string',
-        'tags' => 'string',
-        'status' => 'string'
-    ];
+	/**
+	 * The attributes that should be casted to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'id' => 'integer',
+		'title' => 'string',
+		'body' => 'string',
+		'articleDate' => 'date',
+		'image' => 'string',
+		'tags' => 'string',
+		'status' => 'string'
+	];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'title' => 'nullable|string|max:100',
-        'body' => 'nullable|string|max:1000',
-        'articleDate' => 'nullable',
-        'image' => 'nullable|string|max:100',
-        'tags' => 'nullable|string|max:200',
-        'status' => 'nullable|string|max:100',
-        'created_at' => 'nullable',
-        'updated_at' => 'nullable',
-        'deleted_at' => 'nullable'
-    ];
-
-    
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public static $rules = [
+		'title' => 'nullable|string|max:100',
+		'body' => 'nullable|string|max:1000',
+		'articleDate' => 'nullable',
+		//'image' => 'nullable|string|max:100',
+		'tags' => 'nullable|string|max:200',
+		'status' => 'nullable|string|max:100',
+		'created_at' => 'nullable',
+		'updated_at' => 'nullable',
+		'deleted_at' => 'nullable'
+	];
 }

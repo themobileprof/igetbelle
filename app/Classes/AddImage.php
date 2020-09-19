@@ -2,12 +2,12 @@
 
 namespace App\Classes;
 
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
 
 class AddImage
 {
 
-	public function __construct($image)
+	public function AddImage($request, $image)
 	{
 
 		if ($request->hasFile($image)) {
@@ -25,13 +25,13 @@ class AddImage
 			$filename = 'art-' . time() . '.' . $file->getClientOriginalExtension();
 
 			// save to storage/app/infrastructure as the new $filename
-			$ArticleFileName = $file->storeAs('article', $filename);
+			$ArticleFileName = $file->storeAs('article', $filename, 'public');
 
 			$path = "/storage/app/public/" . $ArticleFileName;
 
 			return $ArticleFileName;
 		} else {
-			return null;
+			return 'N/A';
 		}
 	}
 }

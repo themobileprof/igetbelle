@@ -11,7 +11,7 @@
 							<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 								<div class="header_top_nav">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="{{ url('/faq') }}">Frequently Asked Questions</a></li>
+										<li><a href="{{ route('front.faq') }}">Frequently Asked Questions</a></li>
 										<li><a href="#">Daily Tracker</a></li>
 										<li><a href="#">Get a Doctor</a></li>
 									</ul>
@@ -43,7 +43,7 @@
 											</li>
 											<li><a href="{{ url('about') }}">About Us</a></li>
 											<li><a href="{{ url('services') }}">Services</a></li>
-											<li><a href="{{ url('articles') }}">Articles</a></li>
+											<li><a href="{{ route('front.articles') }}">Articles</a></li>
 										</ul>
 									</nav>
 									<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
