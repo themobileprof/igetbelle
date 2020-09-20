@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Faq;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\Article;
 
 class FrontController extends Controller
 {
@@ -47,7 +48,17 @@ class FrontController extends Controller
 	 */
 	public function articles()
 	{
-		return view('articles');
+		$articles = Article::orderBy('articleDate', 'asc')->simplePaginate(10);
+		$latest = Article::orderBy('updated_at', 'asc')->limit(10)->get();
+
+		$tags = "";
+		foreach ($articles as $article) {
+			$tags .= $article->tags . ",";
+		}
+
+		$unique_tags = array_count_values(explode(",", $tags));
+
+		return view('articles', ['articles' => $articles, 'tags' => $unique_tags, 'latest' => $latest]);
 	}
 
 	/**
