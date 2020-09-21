@@ -19,7 +19,7 @@
 	@yield('content')
 
 	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/footer.jpg') }}" data-speed="0.8"></div>
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -27,7 +27,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#"><img src="images/banner_small.png" style="width: 120px;" alt="" /></a>
+								<a href="#"><img src="{{ asset('images/banner_small.png') }}" style="width: 120px;" alt="" /></a>
 							</div>
 							<div class="footer_about_text">
 								Have questions about pregnancy? Find answers at <strong>iGetBelle.com</strong>, with real doctor vetted facts.

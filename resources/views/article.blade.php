@@ -16,24 +16,13 @@
 
 <!-- Home -->
 
-<div class="home">
-	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/articles.jpg') }}" data-speed="0.8"></div>
+<div class="home" style="height:100px;">
 
 	<!-- Header -->
 
 	@include('layouts.header')
 
-	<div class="home_container">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_content">
-						<div class="home_title">Pregnancy Articles</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 </div>
 <div class="news">
 	<div class="container">
@@ -43,34 +32,32 @@
 			<div class="col-lg-8">
 				<div class="news_posts">
 
-					@foreach($articles as $article)
+					<a href="{{ url()->previous() }}" class="btn btn-default">&lt;&lt; Back</a>
+					<br>
+
 					<!-- News Post -->
 					<div class="news_post">
-						<div class="news_post_image embed-responsive embed-responsive-21by9"><img src="{{ asset('storage/'.$article->image) }}" alt="{{ $article->title }}" class="embed-responsive-item"></div>
+						<div class="news_post_image"><img src="{{ asset('storage/'.$article->image) }}" alt="{{ $article->title }}"></div>
 						<div class="news_post_content">
 							<div class="news_post_date"><a href="#">{{ date('j M Y', strtotime($article->articleDate)) }}</a></div>
-							<div class="news_post_title"><a href="{{ url('news', ['news'=>$article->id]) }}">{{ $article->title }}</a></div>
+							<div class="news_post_title">{{ $article->title }}</div>
 							<div class="news_post_info">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
 									<li>by iGetBelle Administrator</li>
 								</ul>
 							</div>
 							<div class="news_post_text">
-								<p>{{ $article->body }}</p>
+								<p>{!! nl2br($article->body) !!}</p>
 							</div>
-							<!--							<div class="button news_post_button"><a href="#"><span>read more</span><span>read more</span></a></div> -->
 						</div>
 					</div>
-					@endforeach
 					<!-- News Post -->
 
 
 					<!-- News Post -->
 
 
-					<div class="pagination">
-						{{ $articles->links() }}
-					</div>
+
 				</div>
 			</div>
 
@@ -115,7 +102,7 @@
 
 					<!-- Tags -->
 					<div class="sidebar_categories">
-						<div class="sidebar_title">Articles Tags</div>
+						<div class="sidebar_title">Article Tags</div>
 						<div class="categories">
 							<ul>
 								@foreach($tags as $tag=>$num)

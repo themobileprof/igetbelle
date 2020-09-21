@@ -52,13 +52,30 @@ class FrontController extends Controller
 		$latest = Article::orderBy('updated_at', 'asc')->limit(10)->get();
 
 		$tags = "";
-		foreach ($articles as $article) {
+		foreach ($articles as $k => $article) {
 			$tags .= $article->tags . ",";
+			$arts = explode("\n", $article['body']);
+			$articles[$k]['body'] = $arts[0];
 		}
 
 		$unique_tags = array_count_values(explode(",", $tags));
 
 		return view('articles', ['articles' => $articles, 'tags' => $unique_tags, 'latest' => $latest]);
+	}
+
+	/**
+	 * Show front article page.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function article(Request $request)
+	{
+		$article = Article::find($request->news);
+		$latest = Article::orderBy('updated_at', 'asc')->limit(10)->get();
+
+		$unique_tags = array_count_values(explode(",", $article->tags));
+
+		return view('article', ['article' => $article, 'tags' => $unique_tags, 'latest' => $latest]);
 	}
 
 	/**

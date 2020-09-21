@@ -18,6 +18,7 @@ Route::get('/', 'FrontController@index');
 Route::get('about', 'FrontController@about');
 Route::get('services', 'FrontController@services');
 Route::get('news', 'FrontController@articles')->name('front.articles');
+Route::get('news/{news}', 'FrontController@article')->name('front.article');
 Route::get('faq', 'FrontController@faq')->name('front.faq');
 
 

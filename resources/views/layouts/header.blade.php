@@ -6,7 +6,7 @@
 					<div class="col">
 						<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 							<div class="logo">
-								<a href="#"><img src="images/banner_small.png" style="width: 120px;" alt="" /></a>
+								<a href="#"><img src="{{ asset('images/banner_small.png') }}" style="width: 120px;" alt="" /></a>
 							</div>
 							<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 								<div class="header_top_nav">
