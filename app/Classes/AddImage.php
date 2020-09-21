@@ -27,9 +27,9 @@ class AddImage
 			// save to storage/app/infrastructure as the new $filename
 			$ArticleFileName = $file->storeAs('article', $filename, 'public');
 
-			$path = "/storage/app/public/" . $ArticleFileName;
+			//$path = "/storage/app/public/" . $ArticleFileName;
 
-			return $ArticleFileName;
+			return $filename;
 		} else {
 			return 'N/A';
 		}

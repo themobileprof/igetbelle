@@ -127,20 +127,22 @@ class ArticleController extends AppBaseController
 		}
 
 		// Add image to Storage
-		if ($file = new Classes\AddImage($request, 'image')) {
+		if (!empty($request['image'])) {
+			if ($file = new Classes\AddImage) {
 
-			// Delete existing image
-			if (!empty($article->image)) {
-				Storage::delete($article->image);
+				// Delete existing image
+				if (!empty($article->image) && is_file(storage_path('app/public/article/' . $article->image))) {
+					unlink(storage_path('app/public/article/' . $article->image));
+				}
+
+				$request['image'] = $file->AddImage($request, 'image');
 			}
-
-			$input['image'] = $file;
 		} else {
-			$input['image'] = null;
+			$request['image'] = $article->image;
 		}
 
 
-		$article = $this->articleRepository->update($request->all(), $id);
+		$art = $this->articleRepository->update($request->all(), $id);
 
 		// Add Tags
 		new Classes\AddTags($request['tags']);
