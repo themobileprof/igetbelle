@@ -119,6 +119,7 @@ class ArticleController extends AppBaseController
 	public function update($id, UpdateArticleRequest $request)
 	{
 		$article = $this->articleRepository->find($id);
+		$input = $request->all();
 
 		if (empty($article)) {
 			Flash::error('Article not found');
@@ -127,7 +128,7 @@ class ArticleController extends AppBaseController
 		}
 
 		// Add image to Storage
-		if (!empty($request['image'])) {
+		if (!empty($input['image'])) {
 			if ($file = new Classes\AddImage) {
 
 				// Delete existing image
@@ -135,14 +136,14 @@ class ArticleController extends AppBaseController
 					unlink(storage_path('app/public/article/' . $article->image));
 				}
 
-				$request['image'] = $file->AddImage($request, 'image');
+				$input['image'] = $file->AddImage($request, 'image');
 			}
 		} else {
-			$request['image'] = $article->image;
+			$input['image'] = $article->image;
 		}
 
 
-		$art = $this->articleRepository->update($request->all(), $id);
+		$art = $this->articleRepository->update($input, $id);
 
 		// Add Tags
 		new Classes\AddTags($request['tags']);
