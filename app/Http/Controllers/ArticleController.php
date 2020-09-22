@@ -132,8 +132,8 @@ class ArticleController extends AppBaseController
 			if ($file = new Classes\AddImage) {
 
 				// Delete existing image
-				if (!empty($article->image) && is_file(storage_path('app/public/article/' . $article->image))) {
-					unlink(storage_path('app/public/article/' . $article->image));
+				if (!empty($article->image)) {
+					unlink(storage_path('app/public/' . $article->image));
 				}
 
 				$input['image'] = $file->AddImage($request, 'image');

@@ -29,7 +29,7 @@ class AddImage
 
 			//$path = "/storage/app/public/" . $ArticleFileName;
 
-			return $filename;
+			return $ArticleFileName;
 		} else {
 			return 'N/A';
 		}

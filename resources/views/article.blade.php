@@ -37,7 +37,7 @@
 
 					<!-- News Post -->
 					<div class="news_post">
-						<div class="news_post_image"><img src="{{ asset('storage/article/'.$article->image) }}" alt="{{ $article->title }}"></div>
+						<div class="news_post_image"><img src="{{ asset('storage/'.$article->image) }}" alt="{{ $article->title }}"></div>
 						<div class="news_post_content">
 							<div class="news_post_date"><a href="#">{{ date('j M Y', strtotime($article->articleDate)) }}</a></div>
 							<div class="news_post_title">{{ $article->title }}</div>
@@ -84,7 +84,7 @@
 							<!-- Latest News Post -->
 							<div class="latest d-flex flex-row align-items-start justify-content-start">
 								<div>
-									<div class="latest_image p-1"><img src="{{ asset('storage/article/'.$l->image) }}" alt=""></div>
+									<div class="latest_image p-1"><img src="{{ asset('storage/'.$l->image) }}" alt=""></div>
 								</div>
 								<div class="latest_content">
 									<div class="latest_title"><a href="{{ url('news', ['news'=>$l->id]) }}">{{ $l->title }}</a></div>
