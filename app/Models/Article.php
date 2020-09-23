@@ -106,8 +106,8 @@ class Article extends Model
 	 * @var array
 	 */
 	public static $rules = [
-		'title' => 'nullable|string|max:100',
-		'body' => 'nullable|string|max:1000',
+		'title' => 'nullable|string|max:200',
+		'body' => 'nullable|string|max:10000',
 		'articleDate' => 'nullable',
 		//'image' => 'nullable|string|max:100',
 		'tags' => 'nullable|string|max:200',
