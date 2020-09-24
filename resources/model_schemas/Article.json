@@ -13,9 +13,9 @@
     },
     {
         "name": "title",
-        "dbType": "string,100:nullable",
+        "dbType": "string,200:nullable",
         "htmlType": "text",
-        "validations": "nullable|string|max:100|nullable|string|max:100|nullable|string|max:100",
+        "validations": "nullable|string|max:200|nullable|string|max:200|nullable|string|max:200",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -27,7 +27,7 @@
         "name": "body",
         "dbType": "string,1000:nullable",
         "htmlType": "text",
-        "validations": "nullable|string|max:1000|nullable|string|max:1000|nullable|string|max:1000",
+        "validations": "nullable|string|max:10000|nullable|string|max:10000|nullable|string|max:10000",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -120,3 +120,4 @@
         "inView": false
     }
 ]
+

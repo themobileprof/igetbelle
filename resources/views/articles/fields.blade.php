@@ -1,7 +1,7 @@
 <!-- Title Field -->
 <div class="form-group col-sm-6">
 	{!! Form::label('title', 'Title:') !!}
-	{!! Form::text('title', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100,'maxlength' => 100]) !!}
+	{!! Form::text('title', null, ['class' => 'form-control','maxlength' => 200,'maxlength' => 200,'maxlength' => 200]) !!}
 </div>
 
 <!-- Articledate Field -->
@@ -23,7 +23,7 @@
 <!-- Body Field -->
 <div class="form-group col-sm-12">
 	{!! Form::label('body', 'Body:') !!}
-	{!! Form::textarea('body', null, ['class' => 'form-control','maxlength' => 1000,'maxlength' => 1000,'maxlength' => 1000]) !!}
+	{!! Form::textarea('body', null, ['class' => 'form-control','maxlength' => 10000,'maxlength' => 10000,'maxlength' => 10000]) !!}
 </div>
 
 <!-- Image Field -->
