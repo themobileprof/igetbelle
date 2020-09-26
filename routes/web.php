@@ -21,6 +21,8 @@ Route::get('news', 'FrontController@articles')->name('front.articles');
 Route::get('news/{news}', 'FrontController@article')->name('front.article');
 Route::get('faq', 'FrontController@faq')->name('front.faq');
 
+Route::get('faq_cat/{category}', 'FrontController@faqCategory')->name('faq.cat');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

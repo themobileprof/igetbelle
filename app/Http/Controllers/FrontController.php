@@ -114,4 +114,18 @@ class FrontController extends Controller
 			->get();
 		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $cat]);
 	}
+
+	/**
+	 * Show front faq page.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function faqCategory(Request $request)
+	{
+		//dd($request->category);
+		$category = Category::where("category", $request->category)->first();
+		//dd($category->id);
+
+		return redirect('faq?category=' . $category->id);
+	}
 }
