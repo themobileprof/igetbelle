@@ -280,6 +280,7 @@
 								<div class="col-lg-7">
 									<div class="tab_list">
 										{{ $article->body }}
+										<div class="button"><a href="{{ url('news', ['news'=>$article->id]) }}"><span>read more</span><span>read more</span></a></div>
 									</div>
 								</div>
 							</div>
@@ -287,100 +288,6 @@
 					</div>
 					@endforeach
 
-					<!-- Panel -->
-					<div class="tab_panel">
-						<div class="tab_panel_content">
-							<div class="row">
-								<div class="col-lg-5">
-									<div class="tab_image">
-										<img src="images/pregnant_portrait_fashion.jpg" alt="Beautiful Photo model" />
-									</div>
-								</div>
-								<div class="col-lg-7">
-									<div class="tab_list">
-										<ul>
-											<li>
-												<div class="tab_list_text">
-													<p>
-														Maternity style is not a one-size-fits-all endeavor. There are plenty of ways to approach it and you’ll be amazed at how many incredible pregnant street style ensembles there are in this world. Prepare yourself for immediate inspiration—and a trip to the store.
-													</p>
-												</div>
-											</li>
-											<li>
-												<div class="tab_list_title">Shop Slowly</div>
-												<div class="tab_list_text">
-													<p>
-														“Buy nothing for as long as possible, and wear what you have until the last possible moment,” suggests Stella Bugbee, president (The Cut Magazine) “Then buy things slowly. Your body changes so much each month, so buy one or two pairs of pants that fit for a bit, then go up a size as needed. Also, stretchy undies are a must.”
-													</p>
-													<p>
-														<a href="#">Read more...</a>
-													</p>
-												</div>
-											</li>
-
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Panel -->
-					<div class="tab_panel">
-						<div class="tab_panel_content">
-							<div class="tab_list">
-								<ul>
-									<li>
-										<div class="tab_list_text">
-											<p>
-												We all dream of floating calmly through pregnancy, but many women feel more vulnerable or anxious. Being pregnant can bring up a range of emotions for you, including feeling anxious or stressed, but this is completely normal. Stress is a normal reaction to a major change (such as pregnancy).
-											</p>
-											<p>
-												Most women can continue working during pregnancy. Being pregnant, however, might present challenges at the workplace. To stay healthy and productive on the job, understand how to alleviate common pregnancy discomforts
-											</p>
-											<h2 class="tab_list_title">Staying comfortable</h2>
-											<p>
-												<strong>Sitting.</strong> Using an adjustable chair with good lower back support can make long hours of sitting much easier — especially as your weight and posture change.
-											</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Panel -->
-					<div class="tab_panel">
-						<div class="tab_panel_content">
-							<div class="tab_list">
-								<ul>
-									<li>
-										<div class="tab_list_text">
-											<img src="images/pregnant_portrait_young.jpg" alt="Young and pregnant" class="float-left p-2">
-											<p>
-												The ultimate newborn baby checklist can help you determine what you'll need to purchase and prepare as you get ready for baby's birth.
-											</p>
-											<h2>
-												Some nursing mothers like to have these items:
-											</h2>
-											<p>
-
-												<ul>
-													<li>Lots of bibs</li>
-													<li>Burp cloths</li>
-													<li>Breast pump</li>
-													<li>Milk storage containers (here are some essential safety tips on storing breastmilk)</li>
-													<li>Nursing pillow</li>
-													<li>Nursing bras (if buying before baby is born, buy one cup size larger than your pregnant bra size)</li>
-													<a href="#">Read more...</a>
-												</ul>
-											</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
