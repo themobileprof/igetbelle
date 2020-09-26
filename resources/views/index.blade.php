@@ -279,7 +279,9 @@
 								</div>
 								<div class="col-lg-7">
 									<div class="tab_list">
-										{{ $article->body }}
+										{!! $article->body !!}
+										<!-- in case you have an oprn paragraph -->
+										</p>
 										<div class="button"><a href="{{ url('news', ['news'=>$article->id]) }}"><span>read more</span><span>read more</span></a></div>
 									</div>
 								</div>

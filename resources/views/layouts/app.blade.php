@@ -161,6 +161,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
 
+	<script src="https://cdn.tiny.cloud/1/bqfoxvymeu8h31u5yontgd8tbllh4gwyyibobg31ny927inm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<script>
+		tinymce.init({
+			selector: 'textarea'
+		});
+	</script>
+
 	@stack('scripts')
 </body>
 
