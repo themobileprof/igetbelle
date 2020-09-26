@@ -17,8 +17,9 @@
 									</ul>
 								</div>
 								<div class="header_top_phone">
-									<i class="fa fa-android" aria-hidden="true"></i>
-									<span>Chat with Us</span>
+									<a href="{{ url('home') }}">
+										<img src="{{ asset('images/login.png') }}" alt="login" style="max-width:50px;">
+									</a>
 								</div>
 							</div>
 							<div class="hamburger ml-auto">

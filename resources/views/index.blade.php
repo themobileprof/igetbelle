@@ -147,7 +147,7 @@
 						</div>
 					</div>
 					<div class="button cta_button ml-xl-auto">
-						<a href="faqs.php"><span>Search</span><span>Search...</span></a>
+						<a href="{{ url('faq') }}"><span>Search</span><span>Search...</span></a>
 					</div>
 				</div>
 			</div>
@@ -255,73 +255,37 @@
 			<div class="col-lg-5">
 				<!-- Tabs -->
 				<div class="tabs d-flex flex-row align-items-center justify-content-start flex-wrap">
+					@foreach($latest as $article)
 					<div class="tab active">
-						<div class="tab_title">Ectopic Pregnancy</div>
+						<div class="tab_title">{{ $article->title }}</div>
 						<div class="tab_text">
-							22 August, 2020
-						</div>
+							{{ date('j M Y', strtotime($article->articleDate)) }} </div>
 					</div>
-					<div class="tab">
-						<div class="tab_title">Maternity Fashion</div>
-						<div class="tab_text">
-							20 August, 2020
-						</div>
-					</div>
-					<div class="tab">
-						<div class="tab_title">Am I working too Hard?</div>
-						<div class="tab_text">
-							20 August, 2020
-						</div>
-					</div>
-					<div class="tab">
-						<div class="tab_title">Planning for the Baby</div>
-						<div class="tab_text">
-							10 August, 2020
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 			<div class="col-lg-7">
 				<!-- Panels -->
 				<div class="tab_panels">
 					<!-- Panel -->
-					<div class="tab_panel active">
+					@foreach($latest as $article)
+					<div class="tab_panel @if ($loop->first) active @endif">
 						<div class="tab_panel_content">
 							<div class="row">
 								<div class="col-lg-5">
 									<div class="tab_image">
-										<img src="images/pregnant_portrait_worried.jpg" alt="Worried pregnant woman" />
+										<img src="{{ asset('storage/'.$article->image) }}" alt="Worried pregnant woman" />
 									</div>
 								</div>
 								<div class="col-lg-7">
 									<div class="tab_list">
-										<ul>
-											<li>
-												<div class="tab_list_title">What causes Ectopic pregnancy?</div>
-												<div class="tab_list_text">
-													<p>
-														From fertilization to delivery, pregnancy requires a number of steps in a woman’s body. One of these steps is when a fertilized egg travels to the uterus to attach itself. In the case of an ectopic pregnancy, the fertilized egg doesn’t attach to the uterus. Instead, it may attach to the fallopian tube, abdominal cavity, or cervix.
-													</p>
-												</div>
-											</li>
-											<li>
-												<div class="tab_list_title">Symptoms of Ectopic Pregnancy</div>
-												<div class="tab_list_text">
-													<p>
-														The three symptoms (characteristics) of ectopic pregnancy are abdominal pain, absence of menstrual periods (amenorrhea), and vaginal bleeding. However, only about 50% of women have all three of these symptoms.
-													</p>
-													<p>
-														<a href="#">Read more...</a>
-													</p>
-												</div>
-											</li>
-
-										</ul>
+										{{ $article->body }}
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					@endforeach
 
 					<!-- Panel -->
 					<div class="tab_panel">

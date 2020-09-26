@@ -18,7 +18,18 @@ class FrontController extends Controller
 	 */
 	public function index()
 	{
-		return view('index');
+		$latest = Article::orderBy('articleDate', 'desc')->limit(4)->get();
+		foreach ($latest as $k => $article) {
+			if ($article['body'] > 500) {
+				$arts = substr($article['body'], 0, strrpos(substr($article['body'], 0, 500), " ")) . "...";
+			} else {
+				$arts = $article['body'];
+			}
+
+			$latest[$k]['body'] = $arts;
+		}
+
+		return view('index', ['latest' => $latest]);
 	}
 
 	/**
@@ -48,8 +59,8 @@ class FrontController extends Controller
 	 */
 	public function articles()
 	{
-		$articles = Article::orderBy('articleDate', 'asc')->simplePaginate(10);
-		$latest = Article::orderBy('updated_at', 'asc')->limit(10)->get();
+		$articles = Article::orderBy('articleDate', 'desc')->simplePaginate(10);
+		$latest = Article::orderBy('updated_at', 'desc')->limit(10)->get();
 
 		$tags = "";
 		foreach ($articles as $k => $article) {
