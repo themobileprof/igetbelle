@@ -167,7 +167,6 @@
 			selector: 'textarea',
 			plugins: 'wordcount emoticons fullscreen',
 			toolbar: 'wordcount emoticons fullscreen',
-			menubar: 'view'
 		});
 	</script>
 
