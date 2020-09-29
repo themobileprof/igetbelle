@@ -94,7 +94,7 @@ class Article extends Model
 		'id' => 'integer',
 		'title' => 'string',
 		'body' => 'string',
-		'articleDate' => 'date',
+		'articleDate' => 'date:Y-m-d',
 		'image' => 'string',
 		'tags' => 'string',
 		'status' => 'string'
