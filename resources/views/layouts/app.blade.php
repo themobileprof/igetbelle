@@ -164,7 +164,9 @@
 	<script src="https://cdn.tiny.cloud/1/bqfoxvymeu8h31u5yontgd8tbllh4gwyyibobg31ny927inm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 	<script>
 		tinymce.init({
-			selector: 'textarea'
+			selector: 'textarea',
+			plugins: 'wordcount',
+			toolbar: 'wordcount'
 		});
 	</script>
 

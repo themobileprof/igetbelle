@@ -25,7 +25,7 @@
     },
     {
         "name": "body",
-        "dbType": "string,1000:nullable",
+        "dbType": "string,10000:nullable",
         "htmlType": "text",
         "validations": "nullable|string|max:10000|nullable|string|max:10000|nullable|string|max:10000",
         "searchable": true,
