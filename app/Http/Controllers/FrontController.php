@@ -101,8 +101,8 @@ class FrontController extends Controller
 		$categories = Category::all();
 		if (!empty($category)) {
 			if ($category != 'all') {
-				$category = Category::where("category", $category)->first();
-				$cat = $category->id;
+				$category_res = Category::where("category", $category)->first();
+				$cat = $category_res->id;
 			} else {
 				$limit = 2000;
 			}
@@ -119,6 +119,11 @@ class FrontController extends Controller
 			})
 			->limit($limit)
 			->get();
-		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
+
+		if ($category == "all") {
+			return view('faqs', ['faqs' => $faqs]);
+		} else {
+			return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
+		}
 	}
 }

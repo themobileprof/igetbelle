@@ -98,6 +98,9 @@
 
 					</div>
 				</div>
+				<div class="mt-4">
+					<a href="{{ url('faq/all') }}" class="small">Knowledge base dump</a>
+				</div>
 			</div>
 		</div>
 	</div>
