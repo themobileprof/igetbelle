@@ -19,9 +19,11 @@ Route::get('about', 'FrontController@about');
 Route::get('services', 'FrontController@services');
 Route::get('news', 'FrontController@articles')->name('front.articles');
 Route::get('news/{news}', 'FrontController@article')->name('front.article');
-Route::get('faq', 'FrontController@faq')->name('front.faq');
+Route::get('faq/{category?}/{q?}', 'FrontController@faq')->name('front.faq');
+Route::get('faq_search', function (Request $request) {
+	return redirect()->route('front.faq', ['category' => $request->category, 'q' => $request->q]);
+});
 
-Route::get('faq_cat/{category}', 'FrontController@faqCategory')->name('faq.cat');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,4 +53,3 @@ Route::middleware('auth')->group(function () {
 
 	Route::resource('articles', 'ArticleController');
 });
-

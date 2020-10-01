@@ -94,38 +94,31 @@ class FrontController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function faq(Request $request)
+	public function faq($category = null, $q = null, $cat = null)
 	{
-		$cat = Category::all();
+		//dd($q);
+		$limit = 20;
+		$categories = Category::all();
+		if (!empty($category)) {
+			if ($category != 'all') {
+				$category = Category::where("category", $category)->first();
+				$cat = $category->id;
+			} else {
+				$limit = 2000;
+			}
+		}
+
 		$tags = Tag::orderBy('tag', 'asc')->get();
 
-		$q = $request->q;
-		$category = $request->category;
-
-		//dd($request);
 		$faqs = Faq::inRandomOrder()
 			->when($q, function ($query, $q) {
 				return $query->where('tags', 'LIKE', '%' . $q . '%');
 			})
-			->when($category, function ($query, $category) {
-				return $query->where('categoryId', $category);
+			->when($cat, function ($query, $cat) {
+				return $query->where('categoryId', $cat);
 			})
-			->limit(20)
+			->limit($limit)
 			->get();
-		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $cat]);
-	}
-
-	/**
-	 * Show front faq page.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function faqCategory(Request $request)
-	{
-		//dd($request->category);
-		$category = Category::where("category", $request->category)->first();
-		//dd($category->id);
-
-		return redirect('faq?category=' . $category->id);
+		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
 	}
 }

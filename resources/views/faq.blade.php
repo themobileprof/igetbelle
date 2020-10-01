@@ -6,8 +6,8 @@
 
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="styles/elements.css">
-<link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/elements.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/elements_responsive.css') }}">
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
 <!-- Home -->
 
 <div class="home">
-	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/faq.jpg" data-speed="0.8"></div>
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/faq.jpg') }}" data-speed="0.8"></div>
 
 	<!-- Header -->
 
@@ -48,7 +48,7 @@
 				<!-- Buttons -->
 				<div class="buttons">
 					<div class="buttons_content">
-						<form action="{{ url('/faq') }}" method="get">
+						<form action="{{ url('faq_search') }}" method="get">
 							<div class="elements_button">
 								<select id="q" name="q" class="form-control">
 									<option value="">Any Topic</option>
@@ -66,9 +66,9 @@
 									<option value="">Any Category</option>
 									@foreach ($categories as $category)
 									@if($category->id == app('request')->input('category'))
-									<option value="{{ $category->id }}" selected>{{ $category->category }}</option>
+									<option value="{{ $category->category }}" selected>{{ $category->category }}</option>
 									@else
-									<option value="{{ $category->id }}">{{ $category->category }}</option>
+									<option value="{{ $category->category }}">{{ $category->category }}</option>
 									@endif
 									@endforeach
 								</select>

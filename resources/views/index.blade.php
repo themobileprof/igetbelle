@@ -176,7 +176,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Food and Fruits</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/food') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/food') }}">Read More</a></div>
 								</div>
 							</div>
 
@@ -187,7 +187,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Exercises</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/exercises') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/exercises') }}">Read More</a></div>
 								</div>
 							</div>
 
@@ -198,7 +198,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Mental Health</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/mental health') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/mental health') }}">Read More</a></div>
 								</div>
 							</div>
 
@@ -209,7 +209,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Communication</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/communication') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/communication') }}">Read More</a></div>
 								</div>
 							</div>
 
@@ -220,7 +220,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Drugs and Drinks</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/drinks') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/drinks') }}">Read More</a></div>
 								</div>
 							</div>
 
@@ -231,7 +231,7 @@
 								</div>
 								<div class="dept_content">
 									<div class="dept_title">Sex</div>
-									<div class="dept_link"><a href="{{ url('faq_cat/sex') }}">Read More</a></div>
+									<div class="dept_link"><a href="{{ url('faq/sex') }}">Read More</a></div>
 								</div>
 							</div>
 						</div>
