@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -9,28 +10,32 @@ use Illuminate\Database\Migrations\Migration;
  * https://play.google.com/store/apps/details?id=adrian.adbm
  * 
  * Created: Aug 31, 2020
-*/
+ */
 
-class CreateFaqsTable extends Migration {
+class CreateFaqsTable extends Migration
+{
 
-    public function up() {
-        Schema::create('faqs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('question', 200)->nullable();
-            $table->string('answer', 1000)->nullable();
-            $table->string('tags', 100)->nullable();
-            $table->integer('verifyScore')->nullable();
-            $table->integer('categoryId')->nullable()->unsigned();
-            $table->foreign('categoryId')->references('id')->on('categories');
+	public function up()
+	{
+		Schema::create('faqs', function (Blueprint $table) {
+			$table->increments('id');
+			$table->string('question', 200)->nullable();
+			$table->string('answer', 1000)->nullable();
+			$table->string('tags', 100)->nullable();
+			$table->integer('verifyScore')->nullable();
+			$table->integer('trimester')->nullable()->default(0);
+			$table->integer('categoryId')->nullable()->unsigned();
+			$table->foreign('categoryId')->references('id')->on('categories');
 			$table->timestamps();
 			$table->softDeletes();
-        });
-    }
+		});
+	}
 
-    public function down() {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropForeign(['categoryId']);
-        });
-        Schema::dropIfExists('faqs');
-    }
+	public function down()
+	{
+		Schema::table('categories', function (Blueprint $table) {
+			$table->dropForeign(['categoryId']);
+		});
+		Schema::dropIfExists('faqs');
+	}
 }

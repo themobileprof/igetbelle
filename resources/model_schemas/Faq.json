@@ -48,6 +48,18 @@
         "inView": true
     },
     {
+        "name": "trimester",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": "nullable|integer|nullable|integer|nullable|integer",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
         "name": "verifyScore",
         "dbType": "integer,false",
         "htmlType": null,
@@ -112,3 +124,4 @@
         "relation": "mt1,Category,categoryId"
     }
 ]
+
