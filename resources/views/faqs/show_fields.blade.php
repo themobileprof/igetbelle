@@ -16,6 +16,12 @@
 	<p>{{ $faq->tags }}</p>
 </div>
 
+<!-- Trimester Field -->
+<div class="form-group">
+	{!! Form::label('trimester', 'Trimester:') !!}
+	<p>{{ $faq->trimester }}</p>
+</div>
+
 <!-- Verifyscore Field -->
 <div class="form-group">
 	{!! Form::label('verifyScore', 'Verifyscore:') !!}

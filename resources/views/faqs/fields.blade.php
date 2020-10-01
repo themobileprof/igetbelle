@@ -16,6 +16,11 @@
 	{!! Form::text('tags', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100,'maxlength' => 100]) !!}
 </div>
 
+<!-- Trimester Field -->
+<div class="form-group col-sm-6">
+	{!! Form::label('trimester', 'Trimester:') !!}
+	{!! Form::select('trimester', ['0','1','2','3'], ['class' => 'form-control']) !!}
+</div>
 
 <!-- Categoryid Field -->
 <div class="form-group col-sm-6">
