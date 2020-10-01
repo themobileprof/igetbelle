@@ -11,7 +11,9 @@
 
 <body>
 	<div style="text-align:center;">
-		<h1> <img src="{{ asset('images/banner_small.png') }}" alt="iGetBelle.com Logo" style="width:100px;"> Knowledge base</h1>
+		<h1> <img src="{{ asset('images/banner_small.png') }}" alt="iGetBelle.com Logo" style="width:100px;"> Knowledge base (
+			{{ $faqs->count() }}
+			)</h1>
 		<p> <a href="/">Home</a> </p>
 	</div>
 	<div class="acc-container">
