@@ -19,7 +19,7 @@
 <!-- Trimester Field -->
 <div class="form-group col-sm-6">
 	{!! Form::label('trimester', 'Trimester:') !!}
-	{!! Form::select('trimester', ['0','1','2','3'], ['class' => 'form-control']) !!}
+	{!! Form::select('trimester', ['0'=>'All Trimester','1'=>'First Trimester','2'=>'Second Trimester','3'=>'Third Trimester'], ['class' => 'form-control']) !!}
 </div>
 
 <!-- Categoryid Field -->
