@@ -96,33 +96,8 @@
 
 			<!-- Info Form -->
 			<div class="col-lg-4 info_box_col">
-				<div class="info_form_container">
-					<div class="info_form_title">Register for Daily Tracking</div>
-					<form action="register.php" method="post" class="info_form" id="info_form">
-						<input type="text" name="name" class="info_input" placeholder="Name" required="required" />
-						<input type="email" name="email" class="info_input" placeholder="Email" required="required" />
-						<input type="text" name="phone" class="info_input" placeholder="Phone No" />
-
-						<select name="term" id="term" class="info_form_doc info_input info_select">
-							<option>Pregnancy Term</option>
-							<option value="1">1 Month Pregnant</option>
-							<option value="2">2 Months Pregnant</option>
-							<option value="3">3 Months Pregnant</option>
-							<option value="4">4 Months Pregnant</option>
-							<option value="5">5 Months Pregnant</option>
-							<option value="6">6 Months Pregnant</option>
-							<option value="7">7 Months Pregnant</option>
-							<option value="8">8 Months Pregnant</option>
-							<option value="9">9 Months Pregnant</option>
-						</select>
-
-						<input type="text" name="city" class="info_input" placeholder="City" required="required" />
-						<input type="text" name="state" class="info_input" placeholder="State" required="required" />
-						<input type="text" name="country" class="info_input" placeholder="Country" required="required" />
-
-						<button class="info_form_button">Register</button>
-					</form>
-				</div>
+				<iframe allow="microphone;" width="100%" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/eb215e57-ee99-4511-8ad7-c203c35688f3">
+				</iframe>
 			</div>
 		</div>
 	</div>
