@@ -96,8 +96,7 @@
 
 			<!-- Info Form -->
 			<div class="col-lg-4 info_box_col">
-				<iframe allow="microphone;" width="100%" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/eb215e57-ee99-4511-8ad7-c203c35688f3">
-				</iframe>
+				<!-- Add Featured Products -->
 			</div>
 		</div>
 	</div>
@@ -276,4 +275,6 @@
 
 @push('js')
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger chat-icon="https://storage.googleapis.com/cloudprod-apiai/3da95fc6-d72e-4e15-a8ca-10e0fb76fe33_x.png" intent="WELCOME" chat-title="Nina" agent-id="eb215e57-ee99-4511-8ad7-c203c35688f3" language-code="en"></df-messenger>
 @endpush

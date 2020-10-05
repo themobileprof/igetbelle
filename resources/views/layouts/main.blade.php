@@ -56,10 +56,12 @@
 						<div class="footer_contact">
 							<div class="footer_contact_title">Signup for our Weekly newsletter</div>
 							<div class="footer_contact_form_container">
-								<form action="#" class="footer_contact_form" id="footer_contact_form">
+								<form action="{{ route('mailinglists.store') }}" method="POST" class="footer_contact_form" id="footer_contact_form">
+									@csrf
 									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="name" required="required" />
-										<input type="email" class="footer_contact_input" placeholder="Email" required="required" />
+										<input name="name" id="name" type="text" class="footer_contact_input" placeholder="name" required="required" />
+										<input name="email" id="email" type="email" class="footer_contact_input" placeholder="Email" required="required" />
+										<input type="hidden" name="footerform" id="footerform" value="1" />
 									</div>
 									<button class="footer_contact_button">
 										Signup

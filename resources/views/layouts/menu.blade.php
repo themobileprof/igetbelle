@@ -21,18 +21,29 @@
 </li>
 @endif
 
-<li class="{{ Request::is('faqs*') ? 'active' : '' }}">
+
+
+
+
+
+
+
+@if(Auth::user()->roleId <= 2) <li class="{{ Request::is('faqs*') ? 'active' : '' }}">
 	<a href="{{ route('faqs.index') }}"><i class="fa fa-edit"></i><span>FAQs</span></a>
-</li>
+	</li>
 
-<li class="{{ Request::is('tags*') ? 'active' : '' }}">
-	<a href="{{ route('tags.index') }}"><i class="fa fa-edit"></i><span>Tags</span></a>
-</li>
+	<li class="{{ Request::is('tags*') ? 'active' : '' }}">
+		<a href="{{ route('tags.index') }}"><i class="fa fa-edit"></i><span>Tags</span></a>
+	</li>
 
-<li class="{{ Request::is('categories*') ? 'active' : '' }}">
-	<a href="{{ route('categories.index') }}"><i class="fa fa-edit"></i><span>Categories</span></a>
-</li>
-<li class="{{ Request::is('articles*') ? 'active' : '' }}">
-    <a href="{{ route('articles.index') }}"><i class="fa fa-edit"></i><span>Articles</span></a>
-</li>
+	<li class="{{ Request::is('categories*') ? 'active' : '' }}">
+		<a href="{{ route('categories.index') }}"><i class="fa fa-edit"></i><span>Categories</span></a>
+	</li>
+	<li class="{{ Request::is('articles*') ? 'active' : '' }}">
+		<a href="{{ route('articles.index') }}"><i class="fa fa-edit"></i><span>Articles</span></a>
+	</li>
 
+	<li class="{{ Request::is('mailinglists*') ? 'active' : '' }}">
+		<a href="{{ route('mailinglists.index') }}"><i class="fa fa-edit"></i><span>Mailinglists</span></a>
+	</li>
+	@endif

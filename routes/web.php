@@ -23,6 +23,9 @@ Route::get('faq/{category?}/{q?}', 'FrontController@faq')->name('front.faq');
 Route::get('faq_search', function (Request $request) {
 	return redirect()->route('front.faq', ['category' => $request->category, 'q' => $request->q]);
 });
+Route::get('privacy', function () {
+	return view('privacy');
+});
 
 
 
@@ -53,3 +56,6 @@ Route::middleware('auth')->group(function () {
 
 	Route::resource('articles', 'ArticleController');
 });
+
+
+Route::resource('mailinglists', 'MailinglistController');
