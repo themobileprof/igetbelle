@@ -256,7 +256,7 @@
 										{!! $article->body !!}
 										<!-- in case you have an oprn paragraph -->
 										</p>
-										<div class="button"><a href="{{ url('news', ['news'=>$article->id]) }}"><span>read more</span><span>read more</span></a></div>
+										<div class="button"><a href="{{ url('news/'.$article->id.'/'.$article->title) }}"><span>read more</span><span>read more</span></a></div>
 									</div>
 								</div>
 							</div>

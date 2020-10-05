@@ -18,7 +18,7 @@ Route::get('/', 'FrontController@index');
 Route::get('about', 'FrontController@about');
 Route::get('services', 'FrontController@services');
 Route::get('news', 'FrontController@articles')->name('front.articles');
-Route::get('news/{news}', 'FrontController@article')->name('front.article');
+Route::get('news/{news}/{title?}', 'FrontController@article')->name('front.article');
 Route::get('faq/{category?}/{q?}', 'FrontController@faq')->name('front.faq');
 Route::get('faq_search', function (Request $request) {
 	return redirect()->route('front.faq', ['category' => $request->category, 'q' => $request->q]);
@@ -59,3 +59,4 @@ Route::middleware('auth')->group(function () {
 
 
 Route::resource('mailinglists', 'MailinglistController');
+
