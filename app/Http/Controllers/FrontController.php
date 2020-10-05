@@ -21,7 +21,7 @@ class FrontController extends Controller
 		$latest = Article::orderBy('articleDate', 'desc')->limit(4)->get();
 		foreach ($latest as $k => $article) {
 			if (strlen($article['body']) > 500) {
-				$arts = substr($article['body'], 0, strrpos(substr($article['body'], 0, 500), " ")) . "...";
+				$arts = substr($article['body'], 0, 500) . "...";
 			} else {
 				$arts = $article['body'];
 			}
