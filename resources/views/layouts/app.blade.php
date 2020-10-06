@@ -165,8 +165,8 @@
 	<script>
 		tinymce.init({
 			selector: 'textarea',
-			plugins: 'wordcount emoticons fullscreen',
-			toolbar: 'wordcount emoticons fullscreen',
+			plugins: 'wordcount emoticons fullscreen lists',
+			toolbar: 'wordcount emoticons fullscreen numlist bullist',
 		});
 	</script>
 
