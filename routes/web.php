@@ -36,7 +36,7 @@ Route::get('newsletter', function () {
 
 // Facebook login
 Route::get('facebook/redirect', 'SocialAuthFacebookController@redirect');
-Route::get('facebook/callback', 'SocialAuthFacebookController@callback');
+Route::get('callback', 'SocialAuthFacebookController@callback');
 
 
 
