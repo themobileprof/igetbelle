@@ -27,6 +27,17 @@ Route::get('privacy', function () {
 	return view('privacy');
 });
 
+Route::get('newsletter', function () {
+	return view('newsletter');
+});
+
+
+
+
+// Facebook login
+Route::get('facebook/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('facebook/callback', 'SocialAuthFacebookController@callback');
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');

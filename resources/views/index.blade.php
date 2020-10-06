@@ -97,6 +97,24 @@
 			<!-- Info Form -->
 			<div class="col-lg-4 info_box_col">
 				<!-- Add Featured Products -->
+				<div class="card">
+					<img class="card-img-top" src="{{ asset('images/medicine.png') }}" alt="Login to Facebook">
+					<div class="card-body">
+						<h4 class="card-title text-primary">Save your conversations</h4>
+						<hr>
+
+						<p class="card-text">If you asked Nina a few questions and you are wondering how to save and keep track of your conversations, so you don't lose them. Worry no more. <strong>Login with Facebook</strong> to keep track of your conversations and never loss them.
+							<br>
+							<br>
+							Also login to subscribe to Claire's reminders and tracking services to get regular prompt for medications, doctor visits, pregnancy updates and product recommendations.
+						</p>
+						<div class="form-group pt-4">
+							<div>
+								<a href="{{url('/facebook/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

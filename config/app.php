@@ -178,6 +178,8 @@ return [
 		Yajra\DataTables\DataTablesServiceProvider::class,
 		Yajra\DataTables\ButtonsServiceProvider::class,
 		Yajra\DataTables\HtmlServiceProvider::class,
+
+		Laravel\Socialite\SocialiteServiceProvider::class,
 	],
 
 	/*
@@ -235,6 +237,7 @@ return [
 		'Flash'     => Laracasts\Flash\Flash::class,
 
 		'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 	],
 
 ];

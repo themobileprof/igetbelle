@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179841017-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-179841017-1');
+	</script>
 	@yield('title')
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -54,20 +66,7 @@
 					<!-- Footer Contact -->
 					<div class="col-lg-5 footer_col">
 						<div class="footer_contact">
-							<div class="footer_contact_title">Signup for our Weekly newsletter</div>
-							<div class="footer_contact_form_container">
-								<form action="{{ route('mailinglists.store') }}" method="POST" class="footer_contact_form" id="footer_contact_form">
-									@csrf
-									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input name="name" id="name" type="text" class="footer_contact_input" placeholder="name" required="required" />
-										<input name="email" id="email" type="email" class="footer_contact_input" placeholder="Email" required="required" />
-										<input type="hidden" name="footerform" id="footerform" value="1" />
-									</div>
-									<button class="footer_contact_button">
-										Signup
-									</button>
-								</form>
-							</div>
+							<iframe width="540" height="400" src="{{ url('newsletter') }}" frameborder="0" scrolling="no" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
 						</div>
 					</div>
 
