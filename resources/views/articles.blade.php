@@ -49,7 +49,7 @@
 						<div class="news_post_image embed-responsive embed-responsive-21by9"><img src="{{ asset('storage/'.$article->image) }}" alt="{{ $article->title }}" class="embed-responsive-item"></div>
 						<div class="news_post_content">
 							<div class="news_post_date"><a href="#">{{ date('j M Y', strtotime($article->articleDate)) }}</a></div>
-							<div class="news_post_title"><a href="{{ url('news', ['news'=>$article->id]) }}">{{ $article->title }}</a></div>
+							<div class="news_post_title"><a href="{{ url('news/'.$article->id.'/'.$article->title) }}">{{ $article->title }}</a></div>
 							<div class="news_post_info">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
 									<li>by iGetBelle Administrator</li>
@@ -100,7 +100,7 @@
 									<div class="latest_image p-1"><img src="{{ asset('storage/'.$l->image) }}" alt=""></div>
 								</div>
 								<div class="latest_content">
-									<div class="latest_title"><a href="{{ url('news', ['news'=>$l->id]) }}">{{ $l->title }}</a></div>
+									<div class="latest_title"><a href="{{ url('news/'.$l->id.'/'.$l->title) }}">{{ $l->title }}</a></div>
 									<div class="latest_info">
 										<ul class="d-flex flex-row align-items-start justify-content-start">
 											<li><a href="#">{{ date('j M Y', strtotime($l->articleDate)) }}</a></li>

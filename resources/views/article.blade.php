@@ -87,7 +87,7 @@
 									<div class="latest_image p-1"><img src="{{ asset('storage/'.$l->image) }}" alt=""></div>
 								</div>
 								<div class="latest_content">
-									<div class="latest_title"><a href="{{ url('news', ['news'=>$l->id]) }}">{{ $l->title }}</a></div>
+									<div class="latest_title"><a href="{{ url('news/'.$l->id.'/'.$l->title) }}">{{ $l->title }}</a></div>
 									<div class="latest_info">
 										<ul class="d-flex flex-row align-items-start justify-content-start">
 											<li><a href="#">{{ date('j M Y', strtotime($l->articleDate)) }}</a></li>
