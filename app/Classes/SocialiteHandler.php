@@ -9,7 +9,7 @@ class SocialiteHandler
 {
 	public function createOrGetUser(ProviderUser $providerUser)
 	{
-		$user = User::whereFbId($providerUser->getId())
+		$user = User::where('FbId', $providerUser->getId())
 			->first();
 
 		if (!$user) {
