@@ -21,7 +21,7 @@ class SocialiteHandler
 					'FbId' => $providerUser->getId(),
 					'email' => $providerUser->getEmail(),
 					'name' => $providerUser->getName(),
-					'password' => bcrypt(str_random(8))
+					'password' => bcrypt(md5(time()), 0, 8)
 				]);
 			} else {
 				$user->FbId = $providerUser->getId();
