@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
 	{
 		Schema::create('users', function (Blueprint $table) {
 			$table->id();
+			$table->string('FbId', 255);
 			$table->integer('roleId')->nullable()->unsigned();
 			$table->string('name', 100);
 			$table->string('phone', 100)->nullable();

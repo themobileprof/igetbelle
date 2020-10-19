@@ -12,6 +12,18 @@
         "inView": false
     },
     {
+        "name": "FbId",
+        "dbType": "string,255",
+        "htmlType": "text",
+        "validations": "nullable|string|max:255",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+    {
         "name": "roleId",
         "dbType": "integer,false,true",
         "htmlType": null,
@@ -168,3 +180,4 @@
         "inView": false
     }
 ]
+
