@@ -4,7 +4,6 @@ namespace App\Classes;
 
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 class SocialiteHandler
 {
@@ -22,7 +21,7 @@ class SocialiteHandler
 					'FbId' => $providerUser->getId(),
 					'email' => $providerUser->getEmail(),
 					'name' => $providerUser->getName(),
-					'password' => Hash::make(md5(time()), 0, 8)
+					'password' => md5(time())
 				]);
 			} else {
 				$user->FbId = $providerUser->getId();
