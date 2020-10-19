@@ -23,6 +23,10 @@ Route::get('faq/{category?}/{q?}', 'FrontController@faq')->name('front.faq');
 Route::get('faq_search', function (Request $request) {
 	return redirect()->route('front.faq', ['category' => $request->category, 'q' => $request->q]);
 });
+Route::get('dashboard', function () {
+	return view('homepage');
+})->middleware('auth');
+
 Route::get('privacy', function () {
 	return view('privacy');
 });

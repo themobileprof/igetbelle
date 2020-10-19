@@ -16,18 +16,8 @@
 
 
 
-<!-- Home -->
-<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-	Logout
-</a>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-	{{ csrf_field() }}
-</form>
-
-
 <div class="home">
-	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/faq.jpg') }}" data-speed="0.8"></div>
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/dashboard.jpeg') }}" data-speed="0.8"></div>
 
 	<!-- Header -->
 
@@ -38,7 +28,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="home_content">
-						<div class="home_title">Dashboard</div>
+						<div class="home_title"> {{ Auth::user()->name }} Dashboard</div>
 					</div>
 				</div>
 			</div>
@@ -54,7 +44,7 @@
 			<div class="col">
 				<div class="mt-4">
 
-
+					Welcome to your Dashboard
 
 				</div>
 			</div>

@@ -17,9 +17,21 @@
 									</ul>
 								</div>
 								<div class="header_top_phone">
+									@auth
+
+									<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+										<img src="{{ asset('images/logout.png') }}" alt="logout">
+									</a>
+
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+									@endauth
+									@guest
 									<a href="{{ url('home') }}">
 										<img src="{{ asset('images/login.png') }}" alt="login" style="max-width:50px;">
 									</a>
+									@endguest
 								</div>
 							</div>
 							<div class="hamburger ml-auto">
