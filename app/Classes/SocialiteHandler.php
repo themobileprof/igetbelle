@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Classes;
 
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use App\Model\User;
