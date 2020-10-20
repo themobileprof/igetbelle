@@ -23,12 +23,41 @@
 		@foreach ($faqs as $faq)
 
 		<div class="acc-btn">
-			<h2>{{ $faq->question }}</h2>
+			<h2>{{ $faq->question }} {{ $faq->tags }}</h2>
 		</div>
 		<div class="acc-content">
 			<div class="acc-content-inner">
 				<p>
-					{{ $faq->answer }}
+					{{ $faq->answer }} (
+
+					@switch($faq->trimester)
+					@case(1)
+					First trimester
+					@break
+
+					@case(2)
+					Second trimester
+					@break
+
+					@case(3)
+					Third trimester
+					@break
+
+					@case(12)
+					First and Second trimester
+					@break
+
+					@case(23)
+					Second and Third trimester
+					@break
+
+					@case(13)
+					First and Third trimester
+					@break
+
+
+					@endswitch
+					)
 				</p>
 			</div>
 		</div>

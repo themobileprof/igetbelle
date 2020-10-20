@@ -89,6 +89,7 @@ class FrontController extends Controller
 		return view('article', ['article' => $article, 'tags' => $unique_tags, 'latest' => $latest]);
 	}
 
+
 	/**
 	 * Show front faq page.
 	 *
@@ -97,15 +98,10 @@ class FrontController extends Controller
 	public function faq($category = null, $q = null, $cat = null)
 	{
 		//dd($q);
-		$limit = 20;
 		$categories = Category::all();
 		if (!empty($category)) {
-			if ($category != 'all') {
-				$category_res = Category::where("category", $category)->first();
-				$cat = $category_res->id;
-			} else {
-				$limit = 2000;
-			}
+			$category_res = Category::where("category", $category)->first();
+			$cat = $category_res->id;
 		}
 
 		$tags = Tag::orderBy('tag', 'asc')->get();
@@ -117,13 +113,20 @@ class FrontController extends Controller
 			->when($cat, function ($query, $cat) {
 				return $query->where('categoryId', $cat);
 			})
-			->limit($limit)
+			->limit(20)
 			->get();
 
-		if ($category == "all") {
-			return view('faqs', ['faqs' => $faqs]);
-		} else {
-			return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
-		}
+		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
+	}
+
+	/**
+	 * Show front faq page.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function faqs()
+	{
+		$faqs = Faq::all();
+		return view('faqs', ['faqs' => $faqs]);
 	}
 }
