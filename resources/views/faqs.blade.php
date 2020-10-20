@@ -30,7 +30,7 @@
 				<p>
 					{{ $faq->answer }}
 
-					@isset($faq->trimester)
+					@if(!empty($faq->trimester))
 					(
 					@switch($faq->trimester)
 					@case(1)
@@ -61,7 +61,7 @@
 					@endswitch
 
 					)
-					@endisset
+					@endif
 				</p>
 			</div>
 		</div>
