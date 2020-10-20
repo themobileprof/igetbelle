@@ -66,8 +66,7 @@
 						<div class="info_text">
 							Our Info Service desk is manned by <strong style="color: #FF0000;">Nina</strong> our
 							inHouse information Bot. Ask questions about nutrition,
-							health, exercise, mental health, sex, drinks, and even
-							massages, and Nina will fetch you an answer. Click on the icon on the botton right to start.
+							health, exercise, mental health, sex, drinks and Nina will fetch you an answer. Click on the icon on the bottom right to start.
 						</div>
 						<div class="button info_button">
 							<a href="#login"><span>Ask Nina</span><span>Asking Nina</span></a>
