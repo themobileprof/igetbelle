@@ -12,7 +12,7 @@
 								<div class="header_top_nav">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
 										<li><a href="{{ route('front.faq') }}">Frequently Asked Questions</a></li>
-										<li><a href="#">Daily Tracker</a></li>
+										<li><a href="{{ url('/') }}#login">Daily Tracker</a></li>
 										<li><a href="#">Get a Doctor</a></li>
 									</ul>
 								</div>

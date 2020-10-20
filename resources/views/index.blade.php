@@ -8,6 +8,11 @@
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('styles/main_styles.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('styles/responsive.css') }}" />
+<style>
+	html {
+		scroll-behavior: smooth !important;
+	}
+</style>
 @endsection
 
 
@@ -36,7 +41,7 @@
 							portal
 						</div>
 						<div class="button home_button">
-							<a href="#"><span>read more</span><span>read more</span></a>
+							<a href="{{ route('front.faq') }}"><span>read more</span><span>read more</span></a>
 						</div>
 					</div>
 				</div>
@@ -66,7 +71,7 @@
 							FAQ database.
 						</div>
 						<div class="button info_button">
-							<a href="#"><span>Ask Nina</span><span>Asking Nina</span></a>
+							<a href="#login"><span>Ask Nina</span><span>Asking Nina</span></a>
 						</div>
 					</div>
 				</div>
@@ -88,7 +93,7 @@
 							could wear.
 						</div>
 						<div class="button info_button">
-							<a href="#"><span>Ask Claire</span><span>Asking Claire</span></a>
+							<a href="#login"><span>Ask Claire</span><span>Asking Claire</span></a>
 						</div>
 					</div>
 				</div>
@@ -97,13 +102,13 @@
 			<!-- Info Form -->
 			<div class="col-lg-4 info_box_col">
 				<!-- Add Featured Products -->
-				<div class="card">
+				<div class="card" id="login">
 					<img class="card-img-top" src="{{ asset('images/medicine.png') }}" alt="Login to Facebook">
 					<div class="card-body">
 						<h4 class="card-title text-primary">Save your conversations</h4>
 						<hr>
 
-						<p class="card-text">If you asked Nina a few questions and you are wondering how to save and keep track of your conversations, so you don't lose them. Worry no more. <strong>Login with Facebook</strong> to keep track of your conversations and never loss them.
+						<p class="card-text">If you asked Nina a few questions and you are wondering how to save and keep track of your conversations, so you don't lose them. Worry no more. <strong class="text-primary">Login with Facebook</strong> to keep track of your conversations and never loss them.
 							<br>
 							<br>
 							Also login to subscribe to Claire's reminders and tracking services to get regular prompt for medications, doctor visits, pregnancy updates and product recommendations.

@@ -16,7 +16,7 @@
 					<li class="menu_item"><a href="{{ url('/') }}">home</a></li>
 					<li class="menu_item"><a href="{{ url('about') }}">about us</a></li>
 					<li class="menu_item"><a href="{{ url('services') }}">services</a></li>
-					<li class="menu_item"><a href="{{ url('articles') }}">articles</a></li>
+					<li class="menu_item"><a href="{{ route('front.articles') }}">articles</a></li>
 				</ul>
 			</div>
 			<div class="menu_social">
