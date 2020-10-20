@@ -28,8 +28,10 @@
 		<div class="acc-content">
 			<div class="acc-content-inner">
 				<p>
-					{{ $faq->answer }} (
+					{{ $faq->answer }}
 
+					@isset($faq->trimester)
+					(
 					@switch($faq->trimester)
 					@case(1)
 					First trimester
@@ -57,7 +59,9 @@
 
 
 					@endswitch
+
 					)
+					@endisset
 				</p>
 			</div>
 		</div>
