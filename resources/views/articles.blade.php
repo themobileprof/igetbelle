@@ -56,7 +56,7 @@
 								</ul>
 							</div>
 							<div class="news_post_text">
-								<p>{{ $article->body }}</p>
+								<p>{!! $article->body !!}</p>
 							</div>
 							<!--							<div class="button news_post_button"><a href="#"><span>read more</span><span>read more</span></a></div> -->
 						</div>
