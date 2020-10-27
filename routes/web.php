@@ -36,6 +36,9 @@ Route::get('newsletter', function () {
 	return view('newsletter');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', '\Aimeos\Shop\Controller\CatalogController@homeAction')->name('aimeos_home');
 
 
 
@@ -45,7 +48,6 @@ Route::get('callback', 'SocialAuthFacebookController@callback');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Auth::routes();

@@ -15,6 +15,7 @@
     ],
     "require": {
         "php": "^7.2.5",
+        "aimeos/aimeos-laravel": "~2020.10",
         "appointer/swaggervel": "dev-master",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "^4.2",
@@ -66,6 +67,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "post-update-cmd": [
+            "@php artisan migrate",
+            "@php artisan vendor:publish --tag=public --force",
+            "\\Aimeos\\Shop\\Composer::join"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
