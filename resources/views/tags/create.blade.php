@@ -1,23 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Tag
-        </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'tags.store']) !!}
+<section class="content-header">
+	<h1>
+		Tag
+	</h1>
+</section>
+<div class="content">
+	@include('adminlte-templates::common.errors')
+	<div class="box box-primary">
+		<div class="box-body">
+			<div class="row">
+				{!! Form::open(['route' => 'tags.store']) !!}
 
-                        @include('tags.fields')
+				@include('tags.fields')
 
-                    {!! Form::close() !!}
-                </div>
-            </div>
-        </div>
-    </div>
+				{!! Form::close() !!}
+			</div>
+		</div>
+	</div>
+</div>
 @endsection

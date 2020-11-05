@@ -23,7 +23,7 @@
 		@foreach ($faqs as $faq)
 
 		<div class="acc-btn">
-			<h2>{{ $faq->question }} {{ $faq->tags }}</h2>
+			<h2>{{ $faq->question }}</h2>
 		</div>
 		<div class="acc-content">
 			<div class="acc-content-inner">
@@ -62,6 +62,9 @@
 
 					)
 					@endif
+
+					<br>
+					Tags: {{ $faq->tags }}
 				</p>
 			</div>
 		</div>

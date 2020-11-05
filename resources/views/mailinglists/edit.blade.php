@@ -1,23 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Mailinglist
-        </h1>
-   </section>
-   <div class="content">
-       @include('adminlte-templates::common.errors')
-       <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
-                   {!! Form::model($mailinglist, ['route' => ['mailinglists.update', $mailinglist->id], 'method' => 'patch']) !!}
+<section class="content-header">
+	<h1>
+		Mailinglist
+	</h1>
+</section>
+<div class="content">
+	@include('adminlte-templates::common.errors')
+	<div class="box box-primary">
+		<div class="box-body">
+			<div class="row">
+				{!! Form::model($mailinglist, ['route' => ['mailinglists.update', $mailinglist->id], 'method' => 'patch']) !!}
 
-                        @include('mailinglists.fields')
+				@include('mailinglists.fields')
 
-                   {!! Form::close() !!}
-               </div>
-           </div>
-       </div>
-   </div>
+				{!! Form::close() !!}
+			</div>
+		</div>
+	</div>
+</div>
 @endsection

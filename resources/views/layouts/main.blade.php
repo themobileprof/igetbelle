@@ -39,7 +39,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#"><img src="{{ asset('images/banner_small.png') }}" style="width: 120px;" alt="" /></a>
+								<a href="/"><img src="{{ asset('images/banner_small.png') }}" style="width: 120px;" alt="" /></a>
 							</div>
 							<div class="footer_about_text">
 								Have questions about pregnancy? Find answers at <strong>iGetBelle.com</strong>, with real doctor vetted facts.
