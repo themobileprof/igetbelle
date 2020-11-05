@@ -113,7 +113,7 @@ class FrontController extends Controller
 			->when($cat, function ($query, $cat) {
 				return $query->where('categoryId', $cat);
 			})
-			->limit(20)
+			->limit(200)
 			->get();
 
 		return view('faq', ['faqs' => $faqs, 'tags' => $tags, 'categories' => $categories]);
