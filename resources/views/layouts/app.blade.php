@@ -82,7 +82,10 @@
 			@yield('content')
 		</main>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/bootstrap@4"></script>
 	@yield('aimeos_scripts')
+
 </body>
 
 </html>

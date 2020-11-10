@@ -46,8 +46,8 @@
 	</div>
 
 
-	@yield('aimeos_stage')
 	@yield('aimeos_nav')
+	@yield('aimeos_stage')
 	@yield('aimeos_body')
 	@yield('aimeos_aside')
 	@yield('content')
@@ -136,9 +136,9 @@
 	</footer>
 	</div>
 
-	<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/bootstrap@4"></script>
+	@yield('aimeos_scripts')
 	<script src="{{ asset('styles/bootstrap4/popper.js') }}"></script>
-	<script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
 	<script src="{{ asset('plugins/easing/easing.js') }}"></script>
 	<script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>

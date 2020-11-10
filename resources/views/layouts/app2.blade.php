@@ -6,8 +6,8 @@
 	<title>iGetBelle Dashboard</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+	<!-- CSRF Token -->
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,7 +38,7 @@
 		<header class="main-header">
 
 			<!-- Logo -->
-			<a href="#" class="logo">
+			<a href="/" class="logo">
 				<img src="{{ asset('images/banner_small.png') }}" width="80" alt="igetbelle logo">
 			</a>
 
@@ -99,7 +99,7 @@
 
 		<!-- Main Footer -->
 		<footer class="main-footer" style="max-height: 100px;text-align: center">
-			<strong>Copyright © 2020 <a href="#">iGetBelle</a>.</strong> All rights reserved.
+			<strong>Copyright © 2020 <a href="/">iGetBelle</a>.</strong> All rights reserved.
 		</footer>
 
 	</div>
@@ -117,17 +117,12 @@
 				</button>
 
 				<!-- Branding Image -->
-				<a class="navbar-brand" href="{{ url('/') }}">
-					InfyOm Generator
+				<a href="/" class="logo">
+					<img src="{{ asset('images/banner_small.png') }}" width="80" alt="igetbelle logo">
 				</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="app-navbar-collapse">
-				<!-- Left Side Of Navbar -->
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/home') }}">Home</a></li>
-				</ul>
-
 				<!-- Right Side Of Navbar -->
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Authentication Links -->
@@ -175,5 +170,6 @@
 
 	@stack('scripts')
 </body>
+
 
 </html>
