@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::get('/', 'FrontController@index');
 Route::get('about', 'FrontController@about');
 Route::get('services', 'FrontController@services');
@@ -36,7 +37,10 @@ Route::get('newsletter', function () {
 	return view('newsletter');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/shopping', '\Aimeos\Shop\Controller\CatalogController@homeAction')->name('aimeos_home');
 
 
 // Facebook login
@@ -45,7 +49,6 @@ Route::get('callback', 'SocialAuthFacebookController@callback');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Auth::routes();

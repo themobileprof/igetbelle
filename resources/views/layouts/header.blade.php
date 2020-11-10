@@ -58,6 +58,7 @@
 											<li><a href="{{ url('services') }}">Services</a></li>
 											<li><a href="{{ route('front.articles') }}">Articles</a></li>
 										</ul>
+										@yield('aimeos_head')
 									</nav>
 									<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 										<form action="#" id="search_container_form" class="search_container_form">

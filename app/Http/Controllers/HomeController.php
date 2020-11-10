@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,10 +20,13 @@ class HomeController extends Controller
 	/**
 	 * Show the application dashboard.
 	 *
-	 * @return \Illuminate\Http\Response
+	 * @return \Illuminate\Contracts\Support\Renderable
 	 */
 	public function index()
 	{
+		if (Auth::user()->superuser) {
+			return redirect('admin');
+		}
 		return view('home');
 	}
 }
