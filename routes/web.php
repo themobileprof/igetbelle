@@ -20,7 +20,7 @@ Route::get('about', 'FrontController@about');
 Route::get('services', 'FrontController@services');
 Route::get('news', 'FrontController@articles')->name('front.articles');
 Route::get('news/{news}/{title?}', 'FrontController@article')->name('front.article');
-Route::get('faq/all', 'FrontController@faqs')->name('front.faqs');
+Route::get('faqbot/{category?}', 'FrontController@faqs')->name('front.faqs');
 Route::get('faq/{category?}/{q?}', 'FrontController@faq')->name('front.faq');
 Route::get('faq_search', function (Request $request) {
 	return redirect()->route('front.faq', ['category' => $request->category, 'q' => $request->q]);

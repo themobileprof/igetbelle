@@ -124,9 +124,17 @@ class FrontController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function faqs()
+	public function faqs($category = 'all')
 	{
-		$faqs = Faq::all();
+		if ($category == 'all') {
+			$faqs = Faq::all();
+		} else {
+			if (!empty($category)) {
+				$category_res = Category::where("category", $category)->first();
+				$cat = $category_res->id;
+			}
+			$faqs = Faq::where('categoryId', $cat)->get();
+		}
 		return view('faqs', ['faqs' => $faqs]);
 	}
 }
