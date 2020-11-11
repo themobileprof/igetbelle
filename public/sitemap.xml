@@ -73,10 +73,59 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://igetbelle.com/faq/all</loc>
+  <loc>https://igetbelle.com/faqbot</loc>
   <lastmod>2020-10-03T23:41:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-
-
-</urlset>
+<url>
+	<loc>https://igetbelle.com/faqbot/drinks</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+	<loc>https://igetbelle.com/faqbot/exercises</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/food</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/general%20health</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/labour%20and%20delivery</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/medical%20disorders</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+	<loc>https://igetbelle.com/faqbot/medications</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+	<loc>https://igetbelle.com/faqbot/mental%20health</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/obstetric%20disorders</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/obstetric%20emergencies</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/physiological%20symptoms</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url><url>
+<loc>https://igetbelle.com/faqbot/postpartum</loc>
+  <lastmod>2020-10-03T23:41:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url></urlset>
