@@ -37,6 +37,9 @@ Route::get('newsletter', function () {
 	return view('newsletter');
 });
 
+
+Route::get('faqcsv', 'FaqBotController@exportCsv');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 

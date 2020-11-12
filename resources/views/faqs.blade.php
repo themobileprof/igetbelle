@@ -14,7 +14,9 @@
 		<h1> <img src="{{ asset('images/banner_small.png') }}" alt="iGetBelle.com Logo" style="width:100px;"> Knowledge base (
 			{{ $faqs->count() }}
 			)</h1>
-		<p> <a href="/">Home</a> </p>
+		<p> <a href="/">Home</a>
+			<a href="{{ url('faqcsv') }}">Download CSV</a>
+		</p>
 	</div>
 	<div class="acc-container">
 
