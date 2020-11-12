@@ -15,7 +15,6 @@
 			{{ $faqs->count() }}
 			)</h1>
 		<p> <a href="/">Home</a>
-			<a href="{{ url('faqcsv') }}">Download CSV</a>
 		</p>
 	</div>
 	<div class="acc-container">

@@ -47,3 +47,9 @@
 		<a href="{{ route('mailinglists.index') }}"><i class="fa fa-edit"></i><span>Mailinglists</span></a>
 	</li>
 	@endif
+
+	<hr>
+
+	<li class="{{ Request::is('mailinglists*') ? 'active' : '' }}">
+		<a href="{{ url('faqcsv') }}">Download CSV</a>
+	</li>
