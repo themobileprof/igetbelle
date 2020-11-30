@@ -181,6 +181,7 @@ return [
 		Yajra\DataTables\HtmlServiceProvider::class,
 
 		Laravel\Socialite\SocialiteServiceProvider::class,
+		Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
 	],
 
 	/*

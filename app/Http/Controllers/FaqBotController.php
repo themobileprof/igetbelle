@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Faq;
 
 class FaqBotController extends Controller
@@ -28,8 +29,25 @@ class FaqBotController extends Controller
 				fputcsv($file, [$res->question, $res->answer]);
 			}
 			fclose($file);
+			$this->uploadCsv($file);
 		};
 
+
 		return response()->stream($callback, 200, $headers);
+	}
+
+	public function uploadCsv($file)
+	{
+		$disk = Storage::disk('gcs');
+
+		//Backup previous file
+		if ($disk->exists('csv/faq.csv')) {
+
+			$disk->move('csv/faq.csv', 'csv/old_faq.csv');
+		}
+
+		$disk->put('csv/faq.csv', $file);
+
+		//return $disk->lastModified('faq');
 	}
 }
