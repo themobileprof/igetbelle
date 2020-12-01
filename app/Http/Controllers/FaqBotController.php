@@ -29,9 +29,11 @@ class FaqBotController extends Controller
 				fputcsv($file, [$res->question, $res->answer]);
 			}
 			fclose($file);
-			$this->uploadCsv($file);
 		};
 
+		Storage::put('csv/faq.csv', $callback);
+
+		$this->uploadCsv(Storage::get('csv/faq.csv'));
 
 		return response()->stream($callback, 200, $headers);
 	}
@@ -42,6 +44,10 @@ class FaqBotController extends Controller
 
 		//Backup previous file
 		if ($disk->exists('csv/faq.csv')) {
+
+			if ($disk->exists('csv/old_faq.csv')) {
+				$disk->delete('csv/old_faq.csv');
+			}
 
 			$disk->move('csv/faq.csv', 'csv/old_faq.csv');
 		}
