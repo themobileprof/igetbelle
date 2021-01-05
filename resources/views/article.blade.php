@@ -11,6 +11,9 @@
 
 @section('content')
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=787719918643416&autoLogAppEvents=1" nonce="4B0fzPL0"></script>
+
 @include('layouts.homenav')
 
 
@@ -49,6 +52,7 @@
 							<div class="news_post_text">
 								<p>{!! nl2br($article->body) !!}</p>
 							</div>
+							<div class="fb-comments" data-href="{{ url('news/'.$article->id.'/'.str_replace(' ','-',$article->title)) }}" data-width="" data-numposts="5"></div>
 						</div>
 					</div>
 					<!-- News Post -->
@@ -87,7 +91,7 @@
 									<div class="latest_image p-1"><img src="{{ asset('storage/'.$l->image) }}" alt=""></div>
 								</div>
 								<div class="latest_content">
-									<div class="latest_title"><a href="{{ url('news/'.$l->id.'/'.$l->title) }}">{{ $l->title }}</a></div>
+									<div class="latest_title"><a href="{{ url('news/'.$l->id.'/'.str_replace(' ','-',$l->title)) }}">{{ $l->title }}</a></div>
 									<div class="latest_info">
 										<ul class="d-flex flex-row align-items-start justify-content-start">
 											<li><a href="#">{{ date('j M Y', strtotime($l->articleDate)) }}</a></li>
@@ -133,6 +137,7 @@
 
 <!-- Footer -->
 
+
 @endsection
 
 @push('js')
@@ -142,4 +147,7 @@
 <script src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
 <script src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
 <script src="{{ asset('js/about.js') }}"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ff4b824632d17f8"></script>
 @endpush
