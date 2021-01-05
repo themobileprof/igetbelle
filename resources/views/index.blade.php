@@ -275,9 +275,9 @@
 								<div class="col-lg-7">
 									<div class="tab_list">
 										{!! $article->body !!}
-										<!-- in case you have an oprn paragraph -->
+										<!-- in case you have an open paragraph -->
 										</p>
-										<div class="button"><a href="{{ url('news/'.$article->id.'/'.$article->title) }}"><span>read more</span><span>read more</span></a></div>
+										<div class="button"><a href="{{ $article->url }}"><span>read more</span><span>read more</span></a></div>
 									</div>
 								</div>
 							</div>

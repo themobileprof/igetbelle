@@ -27,6 +27,8 @@ class FrontController extends Controller
 			}
 
 			$latest[$k]['body'] = $arts;
+			$lnk = new \App\Classes\ArticleLink();
+			$latest[$k]['url'] = $lnk->ArticleLink($article);
 		}
 
 		return view('index', ['latest' => $latest]);
@@ -67,6 +69,8 @@ class FrontController extends Controller
 			$tags .= $article->tags . ",";
 			$arts = explode("\n", $article['body']);
 			$articles[$k]['body'] = $arts[0];
+			$lnk = new \App\Classes\ArticleLink();
+			$articles[$k]['url'] = $lnk->ArticleLink($article);
 		}
 
 		$unique_tags = array_count_values(explode(",", $tags));

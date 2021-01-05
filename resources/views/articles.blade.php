@@ -49,7 +49,7 @@
 						<div class="news_post_image embed-responsive embed-responsive-21by9"><img src="{{ asset('storage/'.$article->image) }}" alt="{{ $article->title }}" class="embed-responsive-item"></div>
 						<div class="news_post_content">
 							<div class="news_post_date"><a href="#">{{ date('j M Y', strtotime($article->articleDate)) }}</a></div>
-							<div class="news_post_title"><a href="{{ url('news/'.$article->id.'/'. str_replace(' ','-',$article->title)) }}">{{ $article->title }}</a></div>
+							<div class="news_post_title"><a href="{{ $article->url }}">{{ $article->title }}</a></div>
 							<div class="news_post_info">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
 									<li>by iGetBelle Administrator</li>
